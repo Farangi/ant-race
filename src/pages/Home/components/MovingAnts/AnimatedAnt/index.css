@@ -1,0 +1,172 @@
+:root {
+    --trunk-brown: #a07f65;
+    --sky-blue: #9ce6fc;
+    --ant-color: black;
+  }
+
+  @keyframes antMarch {
+    0% {
+      transform: translateX(300px);
+    }
+  
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Convenience class to wrap all ant elements */
+  .ant-wrapper {
+    position: absolute;
+    bottom: -5px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  /* Head */
+  .ant-head {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--ant-color);
+    border-radius: 50%;
+    bottom: 15px;
+    right: 1px;
+  }
+  
+  /* Feeler left */
+  .ant-head::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    height: 10px;
+    width: 5px;
+    border: 1px solid var(--ant-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 40%;
+  }
+  
+  /* Feeler left */
+  .ant-head::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: -8px;
+    height: 10px;
+    width: 5px;
+    border: 1px solid var(--ant-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 40%;
+  }
+  
+  .ant-mid {
+    position: absolute;
+    bottom: 10px;
+    right: 18px;
+    background: var(--ant-color);
+    border-radius: 50%;
+    width: 25px;
+    height: 20px;
+  }
+  
+  /* Middle leg */
+  .ant-mid::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 25px;
+    height: 15px;
+    width: 15px;
+    border: 2px solid var(--ant-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: middleLegMove 0.25s infinite;
+  }
+  
+  @keyframes middleLegMove {
+    0% {
+      transform: translateY(-5px) rotate(-20deg) scaleX(-1);
+    }
+  
+    50% {
+      transform: translateY(0) rotate(-20deg) scaleX(-1);
+    }
+  
+    100% {
+      transform: translateY(-5px) rotate(-20deg) scaleX(-1);
+    }
+  }
+  
+  /* Front leg */
+  .ant-mid::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 5px;
+    height: 15px;
+    width: 15px;
+    border: 2px solid var(--ant-color);
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 40%;
+    transform: rotate(-20deg);
+    animation: frontLegMove 0.25s infinite;
+  }
+  
+  @keyframes frontLegMove {
+    0% {
+      transform: rotate(20deg) scaleX(-1);
+    }
+  
+    50% {
+      transform: rotate(20deg) translateY(-5px) scaleX(-1);
+    }
+  
+    100% {
+      transform: rotate(20deg) scaleX(-1);
+    }
+  }
+  
+  .ant-back {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    width: 30px;
+    height: 20px;
+    background: var(--ant-color);
+    border-radius: 50%;
+    transform: rotate(10deg);
+  }
+  
+  /* Back leg */
+  .ant-back::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 20px;
+    width: 25px;
+    border: 2px solid var(--ant-color);
+    border-left: none;
+    border-bottom: none;
+    transform: skew(0deg, -40deg);
+    animation: backLegMove 0.25s infinite;
+  }
+  
+  @keyframes backLegMove {
+    0% {
+      transform: rotate(-70deg) skew(0deg, -40deg);
+    }
+  
+    50% {
+      transform: rotate(-70deg) skew(0deg, -40deg) translateX(-3px);
+    }
+  
+    100% {
+      transform: rotate(-70deg) skew(0deg, -40deg);
+    }
+  }
