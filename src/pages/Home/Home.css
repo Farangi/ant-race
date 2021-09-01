@@ -1,30 +1,8 @@
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(5px + 2vmin);
-  color: white;
-}
-
-.list {
-  margin: 3% 6%;
-}
-
-.card {
-  padding: 0% 1%;
-  box-shadow: 5px 5px 18px -5px grey;
-  border-radius: 5px;
-  margin: 1%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 
 div > p {
   display: flex;
