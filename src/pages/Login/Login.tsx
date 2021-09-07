@@ -43,7 +43,7 @@ function Login() {
                                 onSubmit={(values, { setSubmitting }) => {
                                     setSubmitting(false);
 
-                                    const usersList = JSON.parse(window.localStorage.getItem("usersList") || '{}')
+                                    const usersList = JSON.parse(window.localStorage.getItem("usersList") || '[]')
 
                                     const foundUser = usersList?.find(
                                         (user: { email: string, password: string }) => values.email === user.email
